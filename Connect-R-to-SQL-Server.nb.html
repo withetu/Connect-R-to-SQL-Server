@@ -176,12 +176,13 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub2RiY0NoYW5uZWwgPC0gb2RiY0Nvbm5lY3QoXCJNaW5pbmdEYXRhYmFzZVwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>odbcChannel &lt;- odbcConnect(&quot;MiningDatabase&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShST0RCQylcbm9kYmNDaGFubmVsIDwtIG9kYmNDb25uZWN0KFwibWFzdGVyXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>library(RODBC)
+odbcChannel &lt;- odbcConnect(&quot;master&quot;)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1JPREJDXSBFUlJPUjogc3RhdGUgSU0wMTQsIGNvZGUgMCwgbWVzc2FnZSBbTWljcm9zb2Z0XVtPREJDIERyaXZlciBNYW5hZ2VyXSBUaGUgc3BlY2lmaWVkIERTTiBjb250YWlucyBhbiBhcmNoaXRlY3R1cmUgbWlzbWF0Y2ggYmV0d2VlbiB0aGUgRHJpdmVyIGFuZCBBcHBsaWNhdGlvbk9EQkMgY29ubmVjdGlvbiBmYWlsZWRcbiJ9 -->
-<pre><code>[RODBC] ERROR: state IM014, code 0, message [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and ApplicationODBC connection failed</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiW1JPREJDXSBFUlJPUjogc3RhdGUgSU0wMDIsIGNvZGUgMCwgbWVzc2FnZSBbTWljcm9zb2Z0XVtPREJDIERyaXZlciBNYW5hZ2VyXSBEYXRhIHNvdXJjZSBuYW1lIG5vdCBmb3VuZCBhbmQgbm8gZGVmYXVsdCBkcml2ZXIgc3BlY2lmaWVkT0RCQyBjb25uZWN0aW9uIGZhaWxlZFxuIn0= -->
+<pre><code>[RODBC] ERROR: state IM002, code 0, message [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specifiedODBC connection failed</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -189,7 +190,7 @@ $(document).ready(function () {
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCiNodHRwczovL2FuZGVyc3NwdXIud29yZHByZXNzLmNvbS8yMDEzLzExLzI2L2Nvbm5lY3Qtci10by1zcWwtc2VydmVyLTIwMTItYW5kLTE0Lw0KDQoNCg0KDQoNCmxpYnJhcnkoUk9EQkMpDQpvZGJjQ2hhbm5lbCA8LSBvZGJjQ29ubmVjdCgiTWluaW5nRGF0YWJhc2UiKQ0KDQoNCg0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQoNCiNodHRwczovL2FuZGVyc3NwdXIud29yZHByZXNzLmNvbS8yMDEzLzExLzI2L2Nvbm5lY3Qtci10by1zcWwtc2VydmVyLTIwMTItYW5kLTE0Lw0KDQoNCg0KDQoNCmxpYnJhcnkoUk9EQkMpDQpvZGJjQ2hhbm5lbCA8LSBvZGJjQ29ubmVjdCgibWFzdGVyIikNCg0KDQoNCmBgYA0KDQpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouDQoNCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ3RybCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLg0K</div>
 
 
 
